@@ -226,3 +226,6 @@ fin_mod = model_name.split('_AND_')[:-1]
 
 regression = LogisticRegression(solver='liblinear').fit(new_tbl[fin_mod], new_tbl['who_win'])
 prediction = regression.predict(new_df[fin_mod])
+
+pd.DataFrame(prediction, columns=['who_wins']).to_csv('Downloads\\prediction.csv')
+
